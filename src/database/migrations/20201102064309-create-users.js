@@ -20,6 +20,11 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
+            active: {
+                type: Sequelize.BOOLEAN,
+                defaultValue: true,
+                allowNull: false,
+            },
             administrator: {
                 type: Sequelize.BOOLEAN,
                 defaultValue: false,
