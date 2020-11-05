@@ -46,7 +46,7 @@ class ProductContoller {
 
         const product = await Product.findByPk(req.body.id);
 
-        if (product !== product.name) {
+        if (name !== product.name) {
             const productExists = await Product.findOne({
                 where: { name },
             });
