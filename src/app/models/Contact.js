@@ -4,8 +4,6 @@ class Contact extends Model {
     static init(sequelize) {
         super.init(
             {
-                id: Sequelize.STRING,
-                name: Sequelize.STRING,
                 email: Sequelize.STRING,
                 phone_number: Sequelize.STRING,
                 place: Sequelize.STRING,
@@ -15,6 +13,7 @@ class Contact extends Model {
                 state: Sequelize.STRING,
                 postal_code: Sequelize.STRING,
                 complement: Sequelize.STRING,
+                provider_id: Sequelize.INTEGER,
             },
             {
                 sequelize,
@@ -27,7 +26,7 @@ class Contact extends Model {
     static associate(models) {
         this.belongsTo(models.Provider, {
             foreignKey: 'provider_id',
-            as: 'provider',
+            as: 'providers',
         });
     }
 }

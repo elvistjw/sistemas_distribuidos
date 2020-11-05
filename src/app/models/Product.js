@@ -8,6 +8,8 @@ class Product extends Model {
                 name: Sequelize.STRING,
                 price: Sequelize.STRING,
                 active: Sequelize.BOOLEAN,
+                category_id: Sequelize.INTEGER,
+                provider_id: Sequelize.INTEGER,
             },
             {
                 sequelize,

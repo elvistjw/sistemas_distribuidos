@@ -8,6 +8,8 @@ class ProductContoller {
             cod_product: Yup.string().required(),
             name: Yup.string().required(),
             price: Yup.string().required(),
+            category_id: Yup.number().required(),
+            provider_id: Yup.number().required(),
         });
 
         if (!(await schema.isValid(req.body))) {
@@ -22,20 +24,32 @@ class ProductContoller {
             return res.status(401).json({ error: 'Product already exist.' });
         }
 
-        const { id, cod_product, name, price } = await Product.create(req.body);
+        const {
+            id,
+            cod_product,
+            name,
+            price,
+            category_id,
+            provider_id,
+        } = await Product.create(req.body);
 
         return res.json({
             id,
             cod_product,
             name,
             price,
+            category_id,
+            provider_id,
         });
     }
 
     async update(req, res) {
         const schema = Yup.object().shape({
-            name: Yup.string(),
-            price: Yup.string(),
+            cod_product: Yup.string().required(),
+            name: Yup.string().required(),
+            price: Yup.string().required(),
+            category_id: Yup.number().required(),
+            provider_id: Yup.number().required(),
         });
 
         if (!(await schema.isValid(req.body))) {
@@ -58,13 +72,21 @@ class ProductContoller {
             }
         }
 
-        const { id, cod_product, price } = await product.update(req.body);
+        const {
+            id,
+            cod_product,
+            price,
+            category_id,
+            provider_id,
+        } = await product.update(req.body);
 
         return res.json({
             id,
             cod_product,
             name,
             price,
+            category_id,
+            provider_id,
         });
     }
 }
