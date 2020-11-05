@@ -1,13 +1,17 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('category', {
+        await queryInterface.createTable('form_payments', {
             id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
             },
-            category_name: {
+            description_form_payment: {
+                type: Sequelize.STRING,
+                allowNull: false,
+            },
+            type_form_payment: {
                 type: Sequelize.STRING,
                 allowNull: false,
                 unique: true,
@@ -24,6 +28,6 @@ module.exports = {
     },
 
     down: async (queryInterface) => {
-        await queryInterface.dropTable('category');
+        await queryInterface.dropTable('form_payments');
     },
 };

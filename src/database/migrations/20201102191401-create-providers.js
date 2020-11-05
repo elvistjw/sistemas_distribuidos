@@ -1,20 +1,25 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('form_payment', {
+        await queryInterface.createTable('providers', {
             id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
             },
-            description_form_payment: {
+            fantasy_name: {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            type_form_payment: {
+            cnpj_cpf: {
                 type: Sequelize.STRING,
                 allowNull: false,
                 unique: true,
+            },
+            active: {
+                type: Sequelize.BOOLEAN,
+                defaultValue: true,
+                allowNull: false,
             },
             created_at: {
                 type: Sequelize.DATE,
@@ -28,6 +33,6 @@ module.exports = {
     },
 
     down: async (queryInterface) => {
-        await queryInterface.dropTable('form_payment');
+        await queryInterface.dropTable('providers');
     },
 };

@@ -27,7 +27,7 @@ module.exports = {
             },
             user_profile_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'user_profile', key: 'id' },
+                references: { model: 'userProfile', key: 'id' },
                 onUpdate: 'CASCADE',
                 onDelete: 'SET NULL',
                 allowNull: true,

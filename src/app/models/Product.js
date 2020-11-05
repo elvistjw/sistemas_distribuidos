@@ -20,11 +20,11 @@ class Product extends Model {
     static associate(models) {
         this.belongsTo(models.Category, {
             foreignKey: 'category_id',
-            as: 'category',
+            as: 'categories',
         });
-        this.belongsTo(models.Category, {
+        this.belongsTo(models.Provider, {
             foreignKey: 'provider_id',
-            as: 'provider',
+            as: 'providers',
         });
     }
 }
