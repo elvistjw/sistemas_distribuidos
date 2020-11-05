@@ -6,7 +6,6 @@ class Order extends Model {
             {
                 order_price: Sequelize.STRING,
                 order_date: Sequelize.DATE,
-                description: Sequelize.STRING,
                 status: Sequelize.STRING,
                 user_id: Sequelize.INTEGER,
                 provider_id: Sequelize.INTEGER,

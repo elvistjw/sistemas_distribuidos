@@ -7,7 +7,6 @@ class ProductContoller {
         const schema = Yup.object().shape({
             order_price: Yup.string().required(),
             order_date: Yup.date().required(),
-            description: Yup.string().required(),
             status: Yup.string().required(),
             user_id: Yup.number().required(),
             provider_id: Yup.number().required(),
@@ -21,7 +20,6 @@ class ProductContoller {
             id,
             order_price,
             order_date,
-            description,
             status,
             user_id,
             provider_id,
@@ -31,7 +29,6 @@ class ProductContoller {
             id,
             order_price,
             order_date,
-            description,
             status,
             user_id,
             provider_id,
@@ -42,7 +39,6 @@ class ProductContoller {
         const schema = Yup.object().shape({
             order_price: Yup.string().required(),
             order_date: Yup.date().required(),
-            description: Yup.string().required(),
             status: Yup.string().required(),
             user_id: Yup.number().required(),
             provider_id: Yup.number().required(),
@@ -69,7 +65,6 @@ class ProductContoller {
         const {
             order_price,
             order_date,
-            description,
             status,
             user_id,
             provider_id,
@@ -79,7 +74,6 @@ class ProductContoller {
             id,
             order_price,
             order_date,
-            description,
             status,
             user_id,
             provider_id,
