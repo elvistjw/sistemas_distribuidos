@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 
 import Order from '../models/Order';
 
-class ProductContoller {
+class OrderContoller {
     async store(req, res) {
         const schema = Yup.object().shape({
             order_price: Yup.string().required(),
@@ -81,4 +81,4 @@ class ProductContoller {
     }
 }
 
-export default new ProductContoller();
+export default new OrderContoller();

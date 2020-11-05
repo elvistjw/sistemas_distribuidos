@@ -7,6 +7,7 @@ import Provider from '../app/models/Provider';
 import Contact from '../app/models/Contact';
 import FormPayment from '../app/models/FormPayment';
 import Order from '../app/models/Order';
+import ProductOrder from '../app/models/ProductOrder';
 
 import databaseConfig from '../config/database';
 
@@ -18,6 +19,7 @@ const models = [
     Contact,
     FormPayment,
     Order,
+    ProductOrder,
 ];
 
 class Database {
