@@ -7,6 +7,7 @@ import ProductController from './app/controllers/ProductController';
 import ProviderController from './app/controllers/ProviderController';
 import ContactController from './app/controllers/ContactController';
 import FormPaymentController from './app/controllers/FormPaymentController';
+import OrderController from './app/controllers/OrderController';
 
 import authMiddleware from './app/middlewares/middleware-auth';
 
@@ -29,5 +30,7 @@ routes.post('/contact', ContactController.store);
 routes.put('/contact', ContactController.update);
 routes.post('/formPayment', FormPaymentController.store);
 routes.put('/formPayment', FormPaymentController.update);
+routes.post('/order', OrderController.store);
+routes.put('/order', OrderController.update);
 
 export default routes;
