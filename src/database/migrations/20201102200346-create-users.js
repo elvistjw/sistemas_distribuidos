@@ -1,22 +1,22 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('products', {
+        await queryInterface.createTable('users', {
             id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
             },
-            cod_product: {
-                type: Sequelize.STRING,
-                allowNull: false,
-                unique: true,
-            },
             name: {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            price: {
+            email: {
+                type: Sequelize.STRING,
+                allowNull: false,
+                unique: true,
+            },
+            password_hash: {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
@@ -25,16 +25,9 @@ module.exports = {
                 defaultValue: true,
                 allowNull: false,
             },
-            category_id: {
+            user_profile_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'category', key: 'id' },
-                onUpdate: 'CASCADE',
-                onDelete: 'SET NULL',
-                allowNull: true,
-            },
-            provider_id: {
-                type: Sequelize.INTEGER,
-                references: { model: 'provider', key: 'id' },
+                references: { model: 'user_profile', key: 'id' },
                 onUpdate: 'CASCADE',
                 onDelete: 'SET NULL',
                 allowNull: true,
@@ -51,6 +44,6 @@ module.exports = {
     },
 
     down: async (queryInterface) => {
-        await queryInterface.dropTable('products');
+        await queryInterface.dropTable('users');
     },
 };
